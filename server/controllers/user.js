@@ -1,5 +1,5 @@
 const User = require('../models/user');
-const {normalizeErrors} = require('../helpers/mongoose');
+const { normalizeErrors } = require('../helpers/mongoose');
 const jwt = require ('jsonwebtoken');
 const config = require ('../config/dev');
 
@@ -22,7 +22,7 @@ exports.auth = function(req,res){
             const token = jwt.sign({
                 userId: user.id,
                 username: user.username
-            }, config.SECRET, { expiresIn: '1h'});
+            }, config.SECRET, { expiresIn: '2h'});
 
             return res.json(token);
         }else{
