@@ -31,10 +31,10 @@
         box-shadow: none;
     }
     .dropdown-item{
-        font-size: 14px;
+        font-size: 14px !important;
 
         &:action, &:focus{
-            background-color: $main-color;
+            background-color: $main-color !important;
         }
     }
 }
