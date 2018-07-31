@@ -24,7 +24,6 @@ export class RegisterComponent implements OnInit {
       },
       (errorResponse) => {
         this.errors = errorResponse.error.errors;
-        
       }
     )
   }
