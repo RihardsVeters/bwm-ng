@@ -25,6 +25,12 @@ export class RentalCreateComponent implements OnInit {
     this.newRental = new Rental();
     this.newRental.shared=false;
   }
+  handleImageUpload(imageUrl: string){
+    this.newRental.image = imageUrl;
+  }
+  handleImageError(){
+    this.newRental.image = '';
+  }
 
   createRental(){ 
     this.rentalService.createRental(this.newRental).subscribe(
