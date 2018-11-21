@@ -44,6 +44,7 @@
    <em>{{rental.dailyRate}}$</em> per night
    <p>Guests: <em>{{newBooking.guests}}</em></p>
    <p>Price: <em>{{newBooking.totalPrice}}$</em></p>
+   <bwm-payment (paymentConfirmed)='onPaymentConfirmed($event)'></bwm-payment>
 
    <p>Do you confirm booking for selected days?</p>
   </div>
@@ -53,7 +54,7 @@
     </p>
   </div>
   <div class="modal-footer"> 
-    <button type="button" class="btn btn-bwm" (click)="createBooking()">Confirm</button>
+    <button  [disabled]="!newBooking.paymentToken" type="button" class="btn btn-bwm" (click)="createBooking()">Confirm</button>
     <button type="button" class="btn btn-bwm" (click)="c('Close click')">Close</button>
   </div>
 </ng-template>
