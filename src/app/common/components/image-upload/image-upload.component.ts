@@ -6,7 +6,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 class FileSnippet{
 
   static readonly IMAGE_SIZE = {width: 950, height: 720};
-
   pending: boolean = false;
   status: string = 'INIT';
   constructor(public src: string, public file: File){}

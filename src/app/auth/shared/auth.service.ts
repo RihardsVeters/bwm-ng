@@ -1,5 +1,4 @@
-
-import {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -56,5 +55,9 @@ export class AuthService{
     }
     public getUsername(): string{
         return this.decodedToken.username;
+    }
+
+    public getUserId(): string{
+        return this.decodedToken.userId;
     }
 } 

@@ -23,6 +23,8 @@ const userSchema = new Schema({
         max:[32,'Too  long, max is 32 characters'],
         require: 'Password is required'
     },
+    stripeCustomerId: String,
+    revenue: Number,
     rentals: [{type: Schema.Types.ObjectId, ref: 'Rental'}],
     bookings: [{type:Schema.Types.ObjectId, ref: 'Booking'}]
 }); 
@@ -34,7 +36,6 @@ userSchema.methods.hasSamePassword = function(requestedPassword){
 
 userSchema.pre('save',function(next){
     const user = this;
-   
     bcrypt.genSalt(10, function(err, salt) {
         bcrypt.hash(user.password, salt, function(err, hash) {
             // Store hash in your password DB.
@@ -42,6 +43,5 @@ userSchema.pre('save',function(next){
             next();
         });
     });
-
 });
 module.exports = mongoose.model('User', userSchema);

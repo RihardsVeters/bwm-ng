@@ -73,6 +73,11 @@ openConfirmModal(content){
   this.errors = [];
   this.modalRef = this.modalService.open(content);
 }
+
+onPaymentConfirmed(paymentToken: any){
+  this.newBooking.paymentToken = paymentToken;
+}
+
 createBooking(){
   this.newBooking.rental = this.rental;
   console.log(this.newBooking);
